@@ -1,0 +1,177 @@
+@media (max-width:768px) {
+    .navbar-brand {
+        position: relative;
+        left: 20px;
+    }
+
+    .fill {
+        background-size: cover !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+   
+   /* ANASAYFA-BOLUMLERİMİZ BASLANGIC */
+   .ste {
+    width: 100% !important;
+    height: auto !important;
+    }
+    .ytube-p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    .ytube {
+    display: flex;
+    width: 100% !important;
+    min-height: 350px !important;
+    }
+   /* ANASAYFA-BOLUMLERİMİZ BİTİS */
+
+   /* KURUMSAL BASLANGIC */
+
+   /* KURUMSAL-GENEL BASLANGIC */
+    /* Akademik Personel-Idari Personel-Dekanlarimiz-Yonetim Kurulu-Fakulte Kurulu Baslangıc */
+    .container-tbl table {
+        width: 100% !important;
+    }
+    .container-tbl table img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .container-tbl tr {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Akademik Personel-Idari Personel-Dekanlarimiz-Yonetim Kurulu-Fakulte Kurulu  Bitis*/
+
+    /* Iletisim Baslangic */
+
+    .map-wrapper {
+        min-width: 100% !important;
+    }
+    .googlemaps {
+        width: 100% !important;
+    }
+
+    /* Iletisim Bitis */
+
+   /* KURUMSAL-GENEL BİTİS */
+
+   /* YONETİM BASLANGİC */
+    
+    /* Dekan Baslangic */
+
+    .img-big {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Dekan Bitis */
+
+    /* Dekan Yardimcilari Baslangic */
+
+    .dy_tr{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .dy_td{
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    .dy_td img{
+        width: 100% !important;
+        height: auto !important;
+    }
+    /* Dekan Yardimcilari Bitis */
+
+    /* Organizasyon Semasi Baslangic */
+
+    #sema {
+        display: flex;
+        justify-content: center ;
+        align-items: center;
+        min-width: 100%;
+        flex-wrap: wrap;
+    }
+    #semaimg {
+        width: 100% !important;
+        height: auto !important;
+    }
+        
+
+    /* Organizasyon Semasi Bitis */
+
+   /* YONETİM BİTİS */
+
+   /* UZAKTAN EGİTİM BASLANGİC */
+
+    /* Ogretim Elemanı Baslangic */
+
+    .oe-container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        
+    }
+    .oe-img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Ogretim Elemanı Bitis */
+
+   /* UZAKTAN EGİTİM BİTİS */
+
+
+   /* OGRENCİ İSLEMLERİ-KOMİSYONLAR-STAJ-KALITE-IC KONTROL BASLANGİC */
+
+    /* Yatay Gecis İslemleri-Egitim Ogretim Komisyonu-Mevlana Komisyonu-Staj Tarihleri Baslangic */
+    .containeryg {
+        width: 100% !important;
+    }
+    /* Yatay Gecis İslemleri-Egitim Ogretim Komisyonu-Mevlana Komisyonu-Staj Tarihleri  Bitis */
+
+   /* OGRENCİ İSLEMLERİ-KOMİSYONLAR-STAJ-KALITE-IC KONTROL BİTİS */
+
+   /* FOTOGRAF GALERİSİ-STE OGRENCI BASLANGIC */
+
+    .thumbnail {
+        height: auto !important;
+    }
+    .tntm-container {
+        width: 100% !important;
+        }
+        .tntm-cont td {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+        .tntm-cont img {
+            width: 100% !important;
+            height: auto !important;
+        }
+        .b-k-container p {
+            font-size: 3vw;
+        }    
+   /* FOTOGRAF GALERİSİ-STE BASLANGIC  BITIS */
+
+   
+
+  
+
+
+   
+
+   
+   
+    
+}

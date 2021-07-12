@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0037)http://cmf.nku.edu.tr/tyyc.php?bid=30 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>NKU TYYÇ;</title>
+<style type="text/css">
+.ictablo{ font-size:10px; font-family:Tahoma, Geneva, sans-serif; }
+.hucrerenk0{ background-color:#FFFFFF; border:2px solid #FFFFFF;} .hucrerenk0:hover{ border:2px solid #FC0; cursor:pointer;}
+.hucrerenk1{ background-color:#ADEAEA; border:2px solid #ADEAEA;} .hucrerenk1:hover{ border:2px solid #FC0; cursor:pointer;}
+.hucrerenk2{ background-color:#38B0DE; border:2px solid #38B0DE;} .hucrerenk2:hover{ border:2px solid #FC0; cursor:pointer;}
+.hucrerenk3{ background-color:#3299CC; border:2px solid #3299CC;} .hucrerenk3:hover{ border:2px solid #FC0; cursor:pointer;}
+.hucrerenk4{ background-color:#007FFF; border:2px solid #007FFF;} .hucrerenk4:hover{ border:2px solid #FC0; cursor:pointer;}
+</style>
+<style type="text/css">
+
+#dhtmltooltip{
+position: absolute;
+font-family:Tahoma, Geneva, sans-serif;
+color:#333333;
+font-weight:bold;
+font-size:10px;
+left: -300px;
+width: 150px;
+border: 1px solid black;
+padding: 2px;
+background-color: lightyellow;
+visibility: hidden;
+z-index: 100;
+/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+}
+
+#dhtmlpointer{
+position:absolute;
+left: -300px;
+z-index: 101;
+visibility: hidden;
+}
+</style>
+<script type="text/javascript">
+
+/***********************************************
+* Cool DHTML tooltip script II- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var offsetfromcursorX=12 //Customize x offset of tooltip
+var offsetfromcursorY=10 //Customize y offset of tooltip
+
+var offsetdivfrompointerX=10 //Customize x offset of tooltip DIV relative to pointer image
+var offsetdivfrompointerY=14 //Customize y offset of tooltip DIV relative to pointer image. Tip: Set it to (height_of_pointer_image-1).
+
+document.write('<div id="dhtmltooltip"></div>') //write out tooltip DIV
+document.write('<img id="dhtmlpointer" src="images/arrow2.gif">') //write out pointer image
+
+var ie=document.all
+var ns6=document.getElementById && !document.all
+var enabletip=false
+if (ie||ns6)
+var tipobj=document.all? document.all["dhtmltooltip"] : document.getElementById? document.getElementById("dhtmltooltip") : ""
+
+var pointerobj=document.all? document.all["dhtmlpointer"] : document.getElementById? document.getElementById("dhtmlpointer") : ""
+
+function ietruebody(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function ddrivetip(thetext, thewidth, thecolor){
+if (ns6||ie){
+if (typeof thewidth!="undefined") tipobj.style.width=thewidth+"px"
+if (typeof thecolor!="undefined" && thecolor!="") tipobj.style.backgroundColor=thecolor
+tipobj.innerHTML=thetext
+enabletip=true
+return false
+}
+}
+
+function positiontip(e){
+if (enabletip){
+var nondefaultpos=false
+var curX=(ns6)?e.pageX : event.clientX+ietruebody().scrollLeft;
+var curY=(ns6)?e.pageY : event.clientY+ietruebody().scrollTop;
+//Find out how close the mouse is to the corner of the window
+var winwidth=ie&&!window.opera? ietruebody().clientWidth : window.innerWidth-20
+var winheight=ie&&!window.opera? ietruebody().clientHeight : window.innerHeight-20
+
+var rightedge=ie&&!window.opera? winwidth-event.clientX-offsetfromcursorX : winwidth-e.clientX-offsetfromcursorX
+var bottomedge=ie&&!window.opera? winheight-event.clientY-offsetfromcursorY : winheight-e.clientY-offsetfromcursorY
+
+var leftedge=(offsetfromcursorX<0)? offsetfromcursorX*(-1) : -1000
+
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+if (rightedge<tipobj.offsetWidth){
+//move the horizontal position of the menu to the left by it's width
+tipobj.style.left=curX-tipobj.offsetWidth+"px"
+nondefaultpos=true
+}
+else if (curX<leftedge)
+tipobj.style.left="5px"
+else{
+//position the horizontal position of the menu where the mouse is positioned
+tipobj.style.left=curX+offsetfromcursorX-offsetdivfrompointerX+"px"
+pointerobj.style.left=curX+offsetfromcursorX+"px"
+}
+
+//same concept with the vertical position
+if (bottomedge<tipobj.offsetHeight){
+tipobj.style.top=curY-tipobj.offsetHeight-offsetfromcursorY+"px"
+nondefaultpos=true
+}
+else{
+tipobj.style.top=curY+offsetfromcursorY+offsetdivfrompointerY+"px"
+pointerobj.style.top=curY+offsetfromcursorY+"px"
+}
+tipobj.style.visibility="visible"
+if (!nondefaultpos)
+pointerobj.style.visibility="visible"
+else
+pointerobj.style.visibility="hidden"
+}
+}
+
+function hideddrivetip(){
+if (ns6||ie){
+enabletip=false
+tipobj.style.visibility="hidden"
+pointerobj.style.visibility="hidden"
+tipobj.style.left="-1000px"
+tipobj.style.backgroundColor=''
+tipobj.style.width=''
+}
+}
+
+document.onmousemove=positiontip
+
+</script></head><body><div id="dhtmltooltip"></div><img id="dhtmlpointer" src="./arrow2.gif">
+
+
+
+<form id="form1" name="form1" method="post" action="http://cmf.nku.edu.tr/tyyc.php?bid=30">
+	<table width="740" border="1" align="center" cellpadding="3" cellspacing="0" style=" font-size: 12px;border-collapse:collapse; background-color:#C3DEDC;">
+    	<tbody><tr>
+          <td colspan="7" align="center">TYYÇ; <u>Mühendislik</u> Temel Alanı  Yeterlilikleri (<u>Akademik Ağırlıklı</u>)<br>
+            <u>6. Düzey</u> (<u>Lisans Eğitimi</u>) </td>
+        </tr>
+        <tr>
+          <td width="50" rowspan="2" align="center" valign="middle">TYYÇ<br>DÜZEYİ</td>
+          <td width="90" rowspan="2" align="center" valign="middle">BİLGİ<br>
+            <br>
+            -Kuramsal<br>
+            -Olgusal</td>
+          <td width="90" rowspan="2" align="center" valign="middle">BECERİLER<br>
+            <br>
+            -Bilişsel<br>
+            -Uygulamalı</td>
+          <td colspan="4" align="center" valign="middle">YETKİNLİKLER</td>
+          </tr>
+        <tr>
+          <td width="100" align="center" valign="middle">Bağımsız Çalışabilme ve Sorumluluk Alabilme Yetkinliği</td>
+          <td width="100" align="center" valign="middle">Öğrenme Yetkinliği</td>
+          <td width="100" align="center" valign="middle">İletişim ve Sosyal Yetkinlik</td>
+          <td width="100" align="center" valign="middle">Alana    Özgü Yetkinlik</td>
+        </tr>
+        <tr>
+          <td align="center" valign="top"><strong>6<br>
+            LİSANS<br>
+            _____ <br>
+EQF-LLL:<br>
+          </strong>6. Düzey<br>
+          <strong>_____ <br>
+QF-EHEA:<br>
+          </strong>1. Düzey</td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&#39;, 300)" onmouseout="hideddrivetip()">1- Matematik, fen bilimleri ve kendi dalları ile ilgili mühendislik konularında yeterli altyapıya sahiptir.&nbsp;</td>
+            	</tr>
+           		          	</tbody></table>
+          </td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk2" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&lt;br /&gt;2 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">1- Matematik, fen bilimleri ve kendi alanlardaki kuramsal ve uygulamalı bilgileri mühendislik çözümleri için beraber kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&#39;, 300)" onmouseout="hideddrivetip()">2- Mühendislik problemlerini saptar, tanımlar, formüle eder ve çözer, bu amaçla uygun analitik yöntemler ve modelleme tekniklerini seçer ve uygular.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk2" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Tekstil hammaddelerini ve malzemelerini tanıyabilmek ve özellikleri hakkında bilgi sahibi olmak.&lt;br /&gt;2 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">3- Bir sistemi, sistem bileşenini ya da süreci analiz eder ve istenen gereksinimleri karşılamak üzere gerçekçi kısıtlar altında tasarlar; bu doğrultuda modern tasarım yöntemlerini uygular.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk2" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - İşletme yönetimi ve organizasyonu alanında temel bilgilere sahip olmak ve günümüzün mühendislik uygulamalarını tanımak ve yararlanabilme becerisini göstermek.&lt;br /&gt;2 - Deney ve proje tasarlama, gerçekleştirme ve sonuçlarını çözümleyip değerlendirebilme ve yorumlama becerisini kazanmak.&#39;, 300)" onmouseout="hideddrivetip()">4- Mühendislik uygulamaları için gerekli olan modern teknik ve araçları seçer ve kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Deney ve proje tasarlama, gerçekleştirme ve sonuçlarını çözümleyip değerlendirebilme ve yorumlama becerisini kazanmak.&#39;, 300)" onmouseout="hideddrivetip()">5- Deney tasarlar, deney yapar, veri toplar sonuçları analiz eder ve yorumlar.&nbsp;</td>
+            	</tr>
+           		          	</tbody></table>
+          </td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Küresel ölçekte çalışabilecek yabancı dil bilgisi, iletişim becerisi ve vizyona sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">1- Bireysel olarak ve çok disiplinli takımlarda etkin olarak çalışır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - İşletme yönetimi ve organizasyonu alanında temel bilgilere sahip olmak ve günümüzün mühendislik uygulamalarını tanımak ve yararlanabilme becerisini göstermek.&#39;, 300)" onmouseout="hideddrivetip()">2- Bilgiye erişir ve bu amaçla kaynak araştırması yapar, veri tabanları ve diğer bilgi kaynaklarını kullanır.&nbsp;</td>
+            	</tr>
+           		            </tbody></table>
+          </td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Tekstil hammaddelerini ve malzemelerini tanıyabilmek ve özellikleri hakkında bilgi sahibi olmak.&#39;, 300)" onmouseout="hideddrivetip()">1- Bilgiye erişir ve bu amaçla kaynak araştırması yapar, veri tabanları ve diğer bilgi kaynaklarını kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Küresel ölçekte çalışabilecek yabancı dil bilgisi, iletişim becerisi ve vizyona sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">2- Yaşam boyu öğrenmenin gerekliliği bilincindedir; bilim ve teknolojideki gelişmeleri izler ve kendini sürekli yeniler.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Küresel ölçekte çalışabilecek yabancı dil bilgisi, iletişim becerisi ve vizyona sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">3- Matematik, fen bilimleri ve kendi alanlardaki kuramsal ve uygulamalı bilgileri mühendislik çözümleri için beraber kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk6" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&lt;br /&gt;2 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&lt;br /&gt;3 - Tekstil üretim süreçlerini ve parametrelerini kavramak ve amaca uygun bir şekilde tasarlayıp, gerçekleştirebilmek&lt;br /&gt;4 - Deney ve proje tasarlama, gerçekleştirme ve sonuçlarını çözümleyip değerlendirebilme ve yorumlama becerisini kazanmak.&lt;br /&gt;5 - Bilişim teknolojilerini yetkin bir şekilde kullanabilmek.&lt;br /&gt;6 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">4- Mühendislik problemlerini saptar, tanımlar, formüle eder ve çözer, bu amaçla uygun analitik yöntemler ve modelleme tekniklerini seçer ve uygular.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk3" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Tekstil üretim süreçlerini ve parametrelerini kavramak ve amaca uygun bir şekilde tasarlayıp, gerçekleştirebilmek&lt;br /&gt;2 - Deney ve proje tasarlama, gerçekleştirme ve sonuçlarını çözümleyip değerlendirebilme ve yorumlama becerisini kazanmak.&lt;br /&gt;3 - İşletme yönetimi ve organizasyonu alanında temel bilgilere sahip olmak ve günümüzün mühendislik uygulamalarını tanımak ve yararlanabilme becerisini göstermek.&#39;, 300)" onmouseout="hideddrivetip()">5- Bir sistemi, sistem bileşenini ya da süreci analiz eder ve istenen gereksinimleri karşılamak üzere gerçekçi kısıtlar altında tasarlar; bu doğrultuda modern tasarım yöntemlerini uygular.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&#39;, 300)" onmouseout="hideddrivetip()">6- Mühendislik uygulamaları için gerekli olan modern teknik ve araçları seçer ve kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Genel ahlak ve mesleki etik değerlerini benimsemiş olmak. &#39;, 300)" onmouseout="hideddrivetip()">7- Bireysel olarak ve çok disiplinli takımlarda etkin olarak çalışır.&nbsp;</td>
+            	</tr>
+           		            </tbody></table>
+          </td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Bilişim teknolojilerini yetkin bir şekilde kullanabilmek.&#39;, 300)" onmouseout="hideddrivetip()">1- Alanının gerektirdiği en az Avrupa Bilgisayar Kullanma Lisansı İleri Düzeyinde bilgisayar yazılımı ile birlikte bilişim ve iletişim teknolojilerini kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Küresel ölçekte çalışabilecek yabancı dil bilgisi, iletişim becerisi ve vizyona sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">2- Sözlü ve yazılı etkin iletişim kurar; bir yabancı dili en az Avrupa Dil Portföyü B1 Genel Düzeyinde kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk2" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&lt;br /&gt;2 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&#39;, 300)" onmouseout="hideddrivetip()">3- Teknik resim kullanarak iletişim kurar.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Bilişim teknolojilerini yetkin bir şekilde kullanabilmek.&#39;, 300)" onmouseout="hideddrivetip()">4- Bilgiye erişir ve bu amaçla kaynak araştırması yapar, veri tabanları ve diğer bilgi kaynaklarını kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Genel ahlak ve mesleki etik değerlerini benimsemiş olmak. &#39;, 300)" onmouseout="hideddrivetip()">5- Mühendislik çözümlerinin ve uygulamalarının evrensel ve toplumsal boyutlardaki etkilerinin bilincinde olur; girişimcilik ve yenilikçilik konularının farkında olur ve çağın sorunları hakkında bilgiye sahiptir.&nbsp;</td>
+            	</tr>
+           		          	</tbody></table>
+          </td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Genel ahlak ve mesleki etik değerlerini benimsemiş olmak. &#39;, 300)" onmouseout="hideddrivetip()">1- Mesleki ve etik sorumluluk bilincine sahiptir.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk2" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - İşletme yönetimi ve organizasyonu alanında temel bilgilere sahip olmak ve günümüzün mühendislik uygulamalarını tanımak ve yararlanabilme becerisini göstermek.&lt;br /&gt;2 - Genel ahlak ve mesleki etik değerlerini benimsemiş olmak. &#39;, 300)" onmouseout="hideddrivetip()">2- Proje yönetimi, işyeri uygulamaları, çalışanların sağlığı, çevre ve iş güvenliği konularında bilinç; mühendislik uygulamalarının hukuksal sonuçları hakkında farkındalığa sahiptir.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - İşletme yönetimi ve organizasyonu alanında temel bilgilere sahip olmak ve günümüzün mühendislik uygulamalarını tanımak ve yararlanabilme becerisini göstermek.&#39;, 300)" onmouseout="hideddrivetip()">3- Mühendislik çözümlerinin ve uygulamalarının evrensel ve toplumsal boyutlardaki etkilerinin bilincinde olduğunu gösterir; girişimcilik ve yenilikçilik konularının farkındadır ve çağın sorunları hakkında bilgi sahibidir.&nbsp;</td>
+            	</tr>
+           		          	</tbody></table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="7" align="center" valign="top">
+          <div style="height:10px; margin-top:90px; border:1px solid #000; width:40px; float:left;" class="hucrerenk0"></div>
+          <div style="height:30px; margin-top:70px; border:1px solid #000; width:40px; float:left;" class="hucrerenk1"></div>
+          <div style="height:50px; margin-top:50px; border:1px solid #000; width:40px; float:left;" class="hucrerenk2"></div>
+          <div style="height:70px; margin-top:30px; border:1px solid #000; width:40px; float:left;" class="hucrerenk3"></div>
+          <div style="height:90px; margin-top:10px; border:1px solid #000; width:40px; float:left;" class="hucrerenk4"></div>&nbsp;</td>
+          </tr>
+	</tbody></table>
+    <br><br><br>
+	<table width="740" border="1" align="center" cellpadding="3" cellspacing="0" style=" font-size:12px;border-collapse:collapse; background-color:#C3DEDC;">
+    	<tbody><tr>
+          <td colspan="7" align="center">TYYÇ; <u>Mühendislik</u> Temel Alanı  Yeterlilikleri (<u>Mesleki Ağırlıklı</u>)<br>
+            <u>6. Düzey</u> (<u>Lisans Eğitimi</u>) </td>
+        </tr>
+        <tr>
+          <td width="50" rowspan="2" align="center" valign="middle">TYYÇ<br>DÜZEYİ</td>
+          <td width="100" rowspan="2" align="center" valign="middle">BİLGİ<br>
+            <br>
+            -Kuramsal<br>
+            -Olgusal</td>
+          <td width="100" rowspan="2" align="center" valign="middle">BECERİLER<br>
+            <br>
+            -Bilişsel<br>
+            -Uygulamalı</td>
+          <td colspan="4" align="center" valign="middle">YETKİNLİKLER</td>
+          </tr>
+        <tr>
+          <td width="100" align="center" valign="middle">Bağımsız Çalışabilme ve Sorumluluk Alabilme Yetkinliği</td>
+          <td width="100" align="center" valign="middle">Öğrenme Yetkinliği</td>
+          <td width="100" align="center" valign="middle">İletişim ve Sosyal Yetkinlik</td>
+          <td width="100" align="center" valign="middle">Alana    Özgü Yetkinlik</td>
+        </tr>
+        <tr>
+          <td align="center" valign="top"><strong>6<br>
+            LİSANS<br>
+            _____ <br>
+EQF-LLL:<br>
+          </strong>6. Düzey<br>
+          <strong>_____ <br>
+QF-EHEA:<br>
+          </strong>1. Düzey</td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk2" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&lt;br /&gt;2 - İşletme yönetimi ve organizasyonu alanında temel bilgilere sahip olmak ve günümüzün mühendislik uygulamalarını tanımak ve yararlanabilme becerisini göstermek.&#39;, 300)" onmouseout="hideddrivetip()">1- Matematik, fen bilimleri ve kendi dalları ile ilgili teknoloji konularda yeterli alt yapıya sahiptir.&nbsp;</td>
+            	</tr>
+           		          	</tbody></table>
+          </td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">1- Matematik, fen ve teknoloji alanlarında mevcut bilgileri uygular ve yeni ortaya çıkan uygulamalara adapte eder.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - İşletme yönetimi ve organizasyonu alanında temel bilgilere sahip olmak ve günümüzün mühendislik uygulamalarını tanımak ve yararlanabilme becerisini göstermek.&#39;, 300)" onmouseout="hideddrivetip()">2- Geliştirilmiş teknolojilerin uygulanmasındaki sorunları çözer.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk4" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Tekstil hammaddelerini ve malzemelerini tanıyabilmek ve özellikleri hakkında bilgi sahibi olmak.&lt;br /&gt;2 - Tekstil üretim süreçlerini ve parametrelerini kavramak ve amaca uygun bir şekilde tasarlayıp, gerçekleştirebilmek&lt;br /&gt;3 - Deney ve proje tasarlama, gerçekleştirme ve sonuçlarını çözümleyip değerlendirebilme ve yorumlama becerisini kazanmak.&lt;br /&gt;4 - İşletme yönetimi ve organizasyonu alanında temel bilgilere sahip olmak ve günümüzün mühendislik uygulamalarını tanımak ve yararlanabilme becerisini göstermek.&#39;, 300)" onmouseout="hideddrivetip()">3- Kavramsal tasarımı tamamlanmış bir sistemin ve/veya sürecin tasarımını ayrıntılandırır veya uyarlar.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk6" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&lt;br /&gt;2 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&lt;br /&gt;3 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&lt;br /&gt;4 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&lt;br /&gt;5 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&lt;br /&gt;6 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&#39;, 300)" onmouseout="hideddrivetip()">4- Teknik resim becerisini tasarım ve uygulamada etkin kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk2" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - İşletme yönetimi ve organizasyonu alanında temel bilgilere sahip olmak ve günümüzün mühendislik uygulamalarını tanımak ve yararlanabilme becerisini göstermek.&lt;br /&gt;2 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">5- Teknoloji alanında güncel teknikleri ve araçları seçer ve kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Tekstil üretim süreçlerini ve parametrelerini kavramak ve amaca uygun bir şekilde tasarlayıp, gerçekleştirebilmek&#39;, 300)" onmouseout="hideddrivetip()">6- Deney yapar, deney sonuçlarını analiz eder, yorumlar ve deneysel sonuçları iyileştirilmeye yönelik uygular.&nbsp;</td>
+            	</tr>
+           		          	</tbody></table>
+          </td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk2" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Genel ahlak ve mesleki etik değerlerini benimsemiş olmak. &lt;br /&gt;2 - Küresel ölçekte çalışabilecek yabancı dil bilgisi, iletişim becerisi ve vizyona sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">1- Bireysel olarak, disiplin içi ve çok disiplinli takımlarda etkin çalışır.&nbsp;</td>
+            	</tr>
+           		            </tbody></table>
+          </td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk3" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Bilişim teknolojilerini yetkin bir şekilde kullanabilmek.&lt;br /&gt;2 - Genel ahlak ve mesleki etik değerlerini benimsemiş olmak. &lt;br /&gt;3 - Küresel ölçekte çalışabilecek yabancı dil bilgisi, iletişim becerisi ve vizyona sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">1- Yaşam boyu öğrenmenin gerekliliği bilincindedir; bilgiye erişir, teknoloji uygulamalarındaki gelişmeleri izler ve kendini sürekli yeniler.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&#39;, 300)" onmouseout="hideddrivetip()">2- Matematik, fen ve teknoloji alanlarında mevcut bilgileri uygular ve yeni ortaya çıkan uygulamalara adapte eder.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&#39;, 300)" onmouseout="hideddrivetip()">3- Teknik resim becerisini tasarım ve uygulamada etkin kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk2" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Deney ve proje tasarlama, gerçekleştirme ve sonuçlarını çözümleyip değerlendirebilme ve yorumlama becerisini kazanmak.&lt;br /&gt;2 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">4- Deney yapar, deney sonuçlarını analiz eder, yorumlar ve deneysel sonuçları iyileştirilmeye yönelik uygular.&nbsp;</td>
+            	</tr>
+           		            </tbody></table>
+          </td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Küresel ölçekte çalışabilecek yabancı dil bilgisi, iletişim becerisi ve vizyona sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">1- Sözlü ve yazılı etkin iletişim kurar; bir yabancı dili en az Avrupa Dil Portföyü B1 Genel Düzeyinde kullanarak alanındaki bilgileri izler ve meslektaşları ile iletişim kurar.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Bilişim teknolojilerini yetkin bir şekilde kullanabilmek.&#39;, 300)" onmouseout="hideddrivetip()">2- Alanının gerektirdiği en az Avrupa Bilgisayar Kullanma Lisansı İleri Düzeyinde bilgisayar yazılımı ile birlikte bilişim ve iletişim teknolojilerini kullanır.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk3" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Temel mühendislik kavramlarına hakim olmak, analitik düşünme ve problem çözme yeteneğine sahip olmak.&lt;br /&gt;2 - Temel Bilimlerde sağlam bilgiye sahip olmak ve karşılaştığı mesleki problemlerin çözümünde bunları kullanabilmek&lt;br /&gt;3 - Küresel ölçekte çalışabilecek yabancı dil bilgisi, iletişim becerisi ve vizyona sahip olmak.&#39;, 300)" onmouseout="hideddrivetip()">3- Teknik resim kullanarak iletişim kurar.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Genel ahlak ve mesleki etik değerlerini benimsemiş olmak. &#39;, 300)" onmouseout="hideddrivetip()">4- Mesleki, etik ve sosyal sorumluluk bilincine sahip olur.&nbsp;</td>
+            	</tr>
+           		          	</tbody></table>
+          </td>
+          <td align="left" valign="top">
+          	<table border="0" cellpadding="2" cellspacing="2" class="ictablo">
+          	            	<tbody><tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Genel ahlak ve mesleki etik değerlerini benimsemiş olmak. &#39;, 300)" onmouseout="hideddrivetip()">1- Mesleki, etik ve sosyal sorumluluk bilincine sahip olur.&nbsp;</td>
+            	</tr>
+           		            	<tr>
+              		<td style="border-bottom:1px solid #333;" class="hucrerenk1" onmouseover="ddrivetip(&#39;&lt;center&gt;PROGRAM YETERLİLİKLER&lt;/center&gt;&lt;br /&gt;1 - Genel ahlak ve mesleki etik değerlerini benimsemiş olmak. &#39;, 300)" onmouseout="hideddrivetip()">2- Mesleki uygulamalarda çevre ve iş güvenliği konularını gözetir.&nbsp;</td>
+            	</tr>
+           		          	</tbody></table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="7" align="center" valign="top">
+          <div style="height:10px; margin-top:90px; border:1px solid #000; width:40px; float:left;" class="hucrerenk0"></div>
+          <div style="height:30px; margin-top:70px; border:1px solid #000; width:40px; float:left;" class="hucrerenk1"></div>
+          <div style="height:50px; margin-top:50px; border:1px solid #000; width:40px; float:left;" class="hucrerenk2"></div>
+          <div style="height:70px; margin-top:30px; border:1px solid #000; width:40px; float:left;" class="hucrerenk3"></div>
+          <div style="height:90px; margin-top:10px; border:1px solid #000; width:40px; float:left;" class="hucrerenk4"></div>&nbsp;</td>
+          </tr>
+	</tbody></table>
+</form>
+
+
+</body></html>

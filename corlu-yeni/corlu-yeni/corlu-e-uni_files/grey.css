@@ -1,0 +1,86 @@
+ul{list-style:none;}
+.onethird{width:285px;padding:0 15px;}
+
+#dc_jqaccordion_widget-7-item
+{
+	width:180px;
+	font: bold 12px Arial, sans-serif; 
+	border-top: 1px solid #ccc; 
+	border-right: 1px solid #ccc; 
+	border-left: 1px solid #ccc;
+}
+#dc_jqaccordion_widget-7-item ul, #dc_jqaccordion_widget-7-item ul li 
+{
+	margin: 0;
+	 padding: 0; 
+	 border: none;
+}
+#dc_jqaccordion_widget-7-item ul a 
+{
+	padding: 5px 5px 5px 50px; 
+	background: #fff; 
+	text-decoration:none; 
+	display: block; 
+	color: #182B74; 
+	border-bottom: 1px solid #ccc; 
+	border-top: 1px solid #fff; 
+	position: relative; 
+	text-shadow: 1px 1px 1px #fff;
+}
+
+#dc_jqaccordion_widget-7-item ul a.dcjq-parent, #dc_jqaccordion_widget-7-item ul a.dcjq-parent:hover 
+{
+	background: #D7D4D4 url(images/bg_grey.png) repeat-x 0 -1px ; 
+	height:100%;
+
+}
+#dc_jqaccordion_widget-7-item ul ul a.dcjq-parent, #dc_jqaccordion_widget-7-item ul ul a.dcjq-parent:hover 
+{
+	background: #EEE url(images/bg_grey.png) repeat-x 0 -1px ; 
+	height:100%;
+}
+
+/*ilk baslıklar grup*/
+#dc_jqaccordion_widget-7-item ul a .dcjq-icon 
+{
+	position: absolute; 
+	top: 50%; 
+	left: 14px; 
+	width: 34px; 
+	margin-top: -17px; 
+	height: 34px; 
+	background: url(images/arrow3yatay.png) no-repeat 0 center;
+}
+
+/*ikinci baslıklar grup*/
+#dc_jqaccordion_widget-7-item ul ul a .dcjq-icon 
+{
+	position: absolute;
+	font: bold 10px Arial, sans-serif;  
+	top: 50%; 
+	left: 35px; 
+	width: 34px; 
+	margin-top: -17px; 
+	height: 34px; 
+	background: url(images/arrow2yatay.png) no-repeat 0 center;
+}
+
+
+
+#dc_jqaccordion_widget-7-item ul a.dcjq-parent.active .dcjq-icon 
+{
+	background: url(images/arrow3dikey.png) no-repeat 0 center;
+}
+#dc_jqaccordion_widget-7-item ul ul a.dcjq-parent.active .dcjq-icon 
+{
+	background: url(images/arrow2dikey.png) no-repeat 0 center;
+}
+
+#dc_jqaccordion_widget-7-item ul a:hover 
+{
+	background: #E6E6E6; 
+	color:#03F;
+}
+
+
+

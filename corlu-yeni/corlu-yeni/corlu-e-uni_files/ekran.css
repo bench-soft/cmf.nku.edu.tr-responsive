@@ -1,0 +1,358 @@
+/*ekran css v.2*/
+.dugmeler 
+{
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+font-weight:bold;
+background-color:#0CF;
+height:20px;
+border-color: #000066;
+border-width: thin;
+border-radius:80px;
+cursor:pointer;
+color:#182B74;
+}
+.dugmeler:hover 
+{
+background-color:#000066;
+color:#FFF;
+}
+
+.listelemetablo {
+	padding:5px;
+	margin:0px;
+	padding-left:1px;
+	border-collapse: collapse;
+}
+.listelemetablo thead tr{
+	border-left:1px solid  #E0E0E0;
+	border-right:1px solid #E0E0E0;
+}
+
+.listelemetablo  tr{
+	background-color:#EBEEFC;
+	font-family:"Times New Roman",Georgia,Serif;
+	font-size:12px;
+	border-left:1px solid #466DF7;
+	border-right:1px solid  #466DF7;
+	  
+	   
+	   
+}
+.listelemetablo  td{  	  
+	padding:7px;
+	padding-left:10px;
+}
+.listelemetablo th {
+	font: bold 11px  Arial, sans-serif;
+	color: #182B74;
+	letter-spacing: 2px;
+	text-align: left;
+	padding: 6px;
+	border-left: 1px solid #E0E0E0;
+	border-top: 0;
+	background:url(../images/wbg.gif) repeat-x top;
+}
+.listelemetablo th a {
+	color: #182B74;	
+}
+.listelemetablo th input {
+	color: #182B74;
+	font:12px Arial, sans-serif;	
+}
+
+.listelemetablo tfoot tr{
+	border-left:1px solid #E0E0E0;
+	border-right:1px solid #E0E0E0;
+}
+.listelemetablo tfoot td {
+    padding:0px;
+    background:url(../images/wbg.gif) repeat-x top;
+}
+
+.altgruptablo {
+	border-collapse: collapse;
+	border:1px solid #9DA7F9;
+	margin:4px;
+}
+.altgruptablo th{
+	background: #B6BCFA;
+	border-left:1px solid #9DA7F9;
+}
+.altgruptablo tr{
+
+   font-family:"Times New Roman",Georgia,Serif;
+   font-size:12px;
+   background-color: #FFFFFF;
+   border-left:1px solid #9DA7F9;
+   border-right:1px solid #9DA7F9;
+	   }
+.altgruptablo td{
+padding:7px 0 7px 0; 
+}
+
+/*Loading*/
+.loading-indicator {
+	height: 100px;
+	width: 80px;
+	background: url( '../images/yukle.gif' );
+	background-repeat: no-repeat;
+	/*background-position: center center ;*/
+}
+
+.loading-indicator-overlay {
+	width:100%;
+	background-color: #FFFFFF;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+}
+
+.arama {
+	padding:0px;
+	margin:0px;
+	border:1px solid #D7D7D7; 
+	background-color: #F7F7F9;
+	border-radius:15px;
+	
+}
+.arama thead tr{
+	background-color: #E8E8E8;
+}
+
+.arama th{
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #182B74;
+	text-align:left;
+	padding-left:5px;
+	height:20px;
+	cursor:pointer;
+	border-radius:15px 15px 0 0;
+	border-bottom:1px solid #D7D7D7;
+
+
+}
+	
+.arama td {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #182B74;
+	height:20px;
+	cursor:pointer;
+	padding-left:5px;
+	padding-top:5px;
+}
+.arama td:hover{
+	color: #00F;
+	}
+.arama input{
+	/*border-radius:10px;*/
+	font-family: Arial, sans-serif;
+	color:#182B74;
+}
+.arama select{
+	/*border-radius:10px;*/
+	font-family: Arial, sans-serif;
+	color:#182B74;
+}
+
+.arama2 {
+	padding:0px;
+	margin:0px;
+	border:1px solid #D7D7D7; 
+	background-color: #F7F7F9;
+	border-radius:15px;
+	
+}
+.arama2 thead tr{
+	background-color: #E8E8E8;
+}
+
+.arama2 th{
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #182B74;
+	text-align:left;
+	padding-left:5px;
+	cursor:pointer;
+	border-bottom:1px solid #D7D7D7;
+
+
+}
+	
+.arama2 td {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #182B74;
+	height:20px;
+	cursor:pointer;
+	padding:2px 2px 0 2px;
+}
+.arama2 td:hover{
+	color: #00F;
+	}
+
+.arama2 input{
+	/*border-radius:10px;*/
+	font-family: Arial, sans-serif;
+	color:#182B74;
+}
+.arama2 select{
+	/*border-radius:10px;*/
+	font-family: Arial, sans-serif;
+	color:#182B74;
+}
+
+
+.formdistablo 
+{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color:#333;
+	border-collapse:collapse; 
+	border-style:dashed;
+}
+	
+.formdistablo td {
+	padding-left:10px;
+	color:#000;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: normal !important;
+	border-bottom:1px dotted #999;
+	border-top:0px;
+	border-collapse:collapse; 
+	border-style:dashed;
+	height:20px;
+	vertical-align:middle;
+	}
+.formdistablo tr:hover{
+	background-color:#D8E7DA; 
+	color:#000;
+	}
+.formdistablo a{
+	text-decoration:none;
+	color:#000;
+	}
+.formdistablo a:hover{
+	text-decoration:none;
+	color:#000;
+	}
+	
+.formictablo 
+{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color:#000;
+}
+	
+.formictablo td 
+{
+	border:1px solid #ccc;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: normal !important;
+	padding-left:10px;
+	color:#000;
+	height:20px;
+	vertical-align:middle;
+}
+
+/*ogrenciderskayit.php, danismanderskayit.php*/
+.derslertablo {
+	padding:0px;
+	border-collapse:collapse;
+}
+.derslertablo th{
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	text-align:left;
+	padding-left:5px;
+	height:20px;
+	cursor:pointer;
+	border-radius:15px 15px 0 0;
+	background:#1b325e;
+	
+
+
+}
+.derslertablo td {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #182B74;
+	height:20px;
+	cursor:pointer;
+	padding-left:10px;
+	padding-top:5px;
+}
+.derslertablo tbody tr
+{
+	border-left:1px solid #D7D7D7;;
+	border-right:1px solid #D7D7D7;;
+	background-color: #F7F7F9;
+
+}
+/*ogrencibilgial.php*/
+.osymdesen {
+	padding:0px;
+	margin:0px;
+	border:1px solid #D7D7D7; 
+	background-color: #F7F7F9;
+	border-radius:15px;
+	
+}
+.osymdesen thead tr{
+	background-color:#182B74 ;
+	
+}
+
+.osymdesen th{
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #E8E8E8;
+	text-align: center;
+	padding-left:5px;
+	height:20px;
+	cursor:pointer;
+	border-bottom:1px solid #D7D7D7;
+	border:1px solid #D7D7D7;
+}
+	
+.osymdesen td {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #182B74;
+	height:20px;
+	cursor:pointer;
+	padding-left:10px;
+	padding-top:5px;
+	border:1px solid #D7D7D7;
+	
+}
+/*ogrencidanismanata.php*/
+.danismandugme
+{
+	background:url(../images/tabblue.gif);
+	font: bold 12px  Arial, sans-serif;
+	color: #182B74;
+	cursor:pointer;
+	border:0px;
+}
+.danismandugme2
+{
+	background:  url(../images/tabgrey.gif); 
+	font: bold 12px  Arial, sans-serif;
+	border:0px;
+}
+

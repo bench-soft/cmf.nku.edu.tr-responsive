@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)https://ogr.nku.edu.tr/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>TNKÜ ÖĞRENCİ SİSTEMİ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- CSS -->
+    <link rel="icon" href="https://ogr.nku.edu.tr/assets/images/favicon.ico">
+    <!-- Bootstrap -->
+    <link href="./corlu-ogrenci-bilgi-sistemi_files/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="./corlu-ogrenci-bilgi-sistemi_files/font-awesome.min.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="./corlu-ogrenci-bilgi-sistemi_files/sweetalert2.css" rel="stylesheet">
+    <!-- Modal Header -->
+    <link href="./corlu-ogrenci-bilgi-sistemi_files/modalheader.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="./corlu-ogrenci-bilgi-sistemi_files/jquery.min.js.indir"></script>
+    <!-- Bootstrap -->
+    <script src="./corlu-ogrenci-bilgi-sistemi_files/bootstrap.min.js.indir"></script>
+    <!-- Loading -->
+    <script src="./corlu-ogrenci-bilgi-sistemi_files/waitingforDialog.js.indir"></script>
+    <!-- Sweet Alert -->
+    <script src="./corlu-ogrenci-bilgi-sistemi_files/sweetalert2.js.indir"></script>
+    <!-- Fonksiyonlar -->
+    <script src="./corlu-ogrenci-bilgi-sistemi_files/fonksiyonlar.js.indir"></script>
+</head>
+<body class="application" style="background-color: white !important;">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+           <a class="navbar-brand" href="http://www.nku.edu.tr/" target="new">
+                <img class="img-responsive" style="margin-top:-25px; margin-right:-110px;z-index:1000;" src="./corlu-ogrenci-bilgi-sistemi_files/logoustsiyah.png" alt="Tekirdağ Namık Kemal Üniversitesi">
+            </a>
+          <a class="navbar-brand" href="https://ogr.nku.edu.tr/login">E-ÖĞRENCİ</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        	<ul class="nav navbar-nav navbar-left">
+            	<li><a href="http://oidb.nku.edu.tr/" target="new">Öğrenci İşleri</a></li>
+                <li class="dropdown">
+                	<a class="dropdown-toggle" data-toggle="dropdown" href="https://ogr.nku.edu.tr/#">Akademik Birimler<span class="caret"></span></a>
+                	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                  		
+                        <li class="dropdown-submenu">
+                    		<a><i class="fa fa-circle" style="font-size:10px;"></i>&nbsp;&nbsp;Enstitüler</a>
+                            <ul class="dropdown-menu">
+                            <li><a href="http://fbe.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Fen Bilimleri Enstitüsü</a></li><li><a href="http://sbe.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Sağlık Bilimleri Enstitüsü</a></li><li><a href="http://sosyalbe.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Sosyal Bilimler Enstitüsü</a></li>	
+                           	</ul>
+                  		</li>
+                  		<li class="dropdown-submenu">
+                    		<a><i class="fa fa-circle" style="font-size:10px;"></i>&nbsp;&nbsp;Fakülteler</a>
+                            <ul class="dropdown-menu">
+                            <li><a href="http://cmf.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Çorlu Mühendislik Fakültesi</a></li><li><a href="http://fened.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Fen - Edebiyat Fakültesi</a></li><li><a href="http://gsf.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Güzel Sanatlar, Tasarım ve Mimarlık Fakültesi</a></li><li><a href="http://hukuk.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Hukuk Fakültesi</a></li><li><a href="http://iibf.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;İktisadi ve İdari Bilimler Fakültesi</a></li><li><a href="http://ilahiyat.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;İlahiyat Fakültesi</a></li><li><a href="http://tip.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Tıp Fakültesi</a></li><li><a href="http://veteriner.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Veteriner Fakültesi</a></li><li><a href="http://ziraat.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Ziraat Fakültesi</a></li>	
+                           	</ul>
+                  		</li>
+                  		<li class="dropdown-submenu">
+                    		<a><i class="fa fa-circle" style="font-size:10px;"></i>&nbsp;&nbsp;Yüksekokullar</a>
+                            <ul class="dropdown-menu">
+                            <li><a href="http://besyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Beden Eğitimi ve Spor Yüksekokulu</a></li><li><a href="http://syo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Sağlık Yüksekokulu</a></li><li><a href="http://ydyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Yabancı Diller Yüksekokulu</a></li><li><a href="http://konservatuvar.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Türk Müziği Devlet Konservatuvarı</a></li>	
+                           	</ul>
+                  		</li>
+                  		<li class="dropdown-submenu">
+                    		<a><i class="fa fa-circle" style="font-size:10px;"></i>&nbsp;&nbsp;Meslek Yüksekokulları</a>
+                            <ul class="dropdown-menu">
+                            <li><a href="http://cerkezkoymyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Çerkezköy  MYO</a></li><li><a href="http://corlumyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Çorlu  MYO</a></li><li><a href="http://hayrabolumyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Hayrabolu  MYO</a></li><li><a href="http://malkaramyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Malkara  MYO</a></li><li><a href="http://memyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Marmaraereğlisi  MYO</a></li><li><a href="http://muratlimyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Muratlı  MYO</a></li><li><a href="http://shmyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Sağlık Hizmetleri  MYO</a></li><li><a href="http://saraymyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Saray  MYO</a></li><li><a href="http://sbmyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Sosyal Bilimler  MYO</a></li><li><a href="http://sarkoymyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Şarköy  MYO</a></li><li><a href="http://tbmyo.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Teknik Bilimler  MYO</a></li>	
+                           	</ul>
+                  		</li>
+                  		<li class="dropdown-submenu">
+                    		<a><i class="fa fa-circle" style="font-size:10px;"></i>&nbsp;&nbsp;Rektörlüğe Bağlı Bölümler</a>
+                            <ul class="dropdown-menu">
+                            <li><a href="http://aiit.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Atatürk İlkeleri ve İnkılap Tarihi  </a></li><li><a href="http://bedenegitimi.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Beden Eğitimi </a></li><li><a href="http://guzelsanatlar.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Güzel Sanatlar </a></li><li><a href="http://turkdili.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Türk Dili </a></li><li><a href="http://yabancidiller.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Yabancı Diller </a></li>                            </ul>
+                  		</li>
+                  		<li class="dropdown-submenu">
+                    		<a><i class="fa fa-circle" style="font-size:10px;"></i>&nbsp;&nbsp;Araştırma ve Uygulama Merkezleri</a>
+                            <ul class="dropdown-menu">
+                        	<li><a href="http://balkam.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Balkan Araştırmaları Uygulama ve Araştırma Merkezi (BALKAM)</a></li><li><a href="http://bap.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Bilimsel Araştırma Projeleri Birimi (BAP)</a></li> <li><a href="https://bapbs.nku.edu.tr/" target="new"> &nbsp;<b>-</b> E-BAP Sistemi</a></li> <li><a href="http://merkezlab.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Bilimsel ve Teknolojik Araştırmalar Uygulama ve Araştırma Merkezi (NABİLTEM)</a></li> <li><a href="https://labara.nku.edu.tr/" target="new"> &nbsp;<b>-</b> Laboratuvar Arama Sistemi</a></li> <li><a href="http://dhuam.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Deney Hayvanları Uygulama ve Araştırma Merkezi (DHUAM)</a></li><li><a href="http://nakdim.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Dış İlişkiler Uygulama ve Araştırma Merkezi  (NAKDİM)</a></li><li><a href="http://naksam.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Kadın ve Aile Çalışmaları Uygulama ve Araştırma Merkezi (NAKSAM)</a></li><li><a href="http://kariyer.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Kariyer Uygulama ve Araştırma Merkezi (NKÜKAM)</a></li><li><a href="http://sem.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Sürekli Eğitim Merkezi (NAKSEM)</a></li><li><a href="http://hastane.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Tekirdağ Namık Kemal Üniversitesi Hastanesi (NKÜ Hastane)</a></li><li><a href="http://travim.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Trakya Verimlilik ve İnovasyon Uygulama ve Araştırma Merkezi (TRAVİM)</a></li><li><a href="http://touam.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Türkçe Öğretimi Uygulama ve Araştırma Merkezi (TÖMER)</a></li><li><a href="http://nkuzem.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Uzaktan Eğitim Uygulama ve Araştırma Merkezi (NKUZEM)</a></li>                            <li><a href="http://3d.nku.edu.tr/" target="new"><i class="fa fa-circle-o" style="font-size:8px;"></i>&nbsp;&nbsp;Tasarımcı Düşünce Atölyesi (TADAT)</a></li> 
+                            </ul>
+                  		</li>
+               		</ul>
+                </li>
+                <li><a href="http://oidb.nku.edu.tr/AkademikTakvim/0/s/3882/3914" target="new">Akademik Takvim</a></li>
+                <li><a href="http://bilgipaketi.nku.edu.tr/" target="new">Ders Katalogları</a></li>
+                <li><a href="http://kutuphane.nku.edu.tr/" target="new">Kütüphane</a></li>
+                <li><a href="http://www.nku.edu.tr/iletisim" target="new">İletişim</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+<div class="container" style="margin-top: 50px;">
+
+<style>
+.fa.fa-instagram {
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+</style>
+<div class="row">
+    <div class="col-md-6"><br>
+        <img class="img-responsive" src="./corlu-ogrenci-bilgi-sistemi_files/students.jpg" style="width:100%; height:370px;">
+    </div>
+    <div class="col-md-6">
+    <br>
+        <div class="panel panel-primary">
+        	<div class="panel-heading"><h3 class="panel-title">E-Öğrenci Sistemi Girişi</h3></div>
+            <div class="panel-body" style="min-height:330px;">
+            	<form action="https://ogr.nku.edu.tr/login" method="post" accept-charset="utf-8">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input type="text" id="kullaniciadi" name="kullaniciadi" class="form-control" placeholder="Öğrenci Numarası" maxlength="10" onkeypress="return KarakterKontrol(event,/^[0-9]+$/);" required=""><span class="input-group-addon">@nku.edu.tr</span>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i>&nbsp;</span>
+                        <input type="password" id="kullanicisifre" name="kullanicisifre" class="form-control" placeholder="Şifre" required="">
+                    </div>
+                    <br>
+                    <table>
+                        <tbody><tr>
+                            <td>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-check"></i>&nbsp;</span>
+                                <input type="text" id="dogrulamakodu" name="dogrulamakodu" class="form-control" placeholder="Doğrulama Kodu" required="">
+                            </div>
+                            </td>
+                            <td width="10"></td>
+                            <td><div id="dogrulamakodudiv" name="dogrulamakodudiv"><img id="myCaptcha" src="./corlu-ogrenci-bilgi-sistemi_files/1624840381.5762.jpg" style="width: 120; height: 30; border: 0;" alt=" "></div></td>
+                            <td width="10"></td>
+                            <td><button type="button" class="btn btn-md btn-info" onclick="DogrulamaKoduGuncelle();"><i class="fa fa-refresh"></i></button></td>
+                   		</tr>
+                    </tbody></table>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;Giriş Yap</button> 
+                        <a href="http://sifre.nku.edu.tr/" target="new" style="text-decoration:none;"><button type="button" class="btn btn-sm btn-info"><i class="fa fa-user"></i>&nbsp;&nbsp;Şifremi Unuttum</button></a>
+                        </div>
+                        <div class="col-md-6" align="right">
+						<a href="https://ogr.nku.edu.tr/login/ogrencinoSorgula" data-remote="false" data-toggle="modal" data-target="#sorgulamodal" style="text-decoration:none;">
+                       	<button type="button" class="btn btn-sm btn-primary btn-block"> <i class="fa fa-search"></i>&nbsp;&nbsp;Öğrenci Numarası Sorgula</button>
+                        </a>
+                        </div>	
+                    </div>
+					           		</form>
+            </div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	 
+	<!--<div class="col-md-4">
+        <a href="<php echo base_url('login/ogrencinoSorgula'); >" data-remote="false" data-toggle="modal" data-target="#sorgulamodal" style="text-decoration:none;">
+        <div class="panel panel-info">
+            <div class="panel-heading" style="cursor:pointer;"><u><b>Öğrenci Numarası Sorgula</b></u></div>
+            <img class="img-responsive" src="<php echo base_url("assets/images/search.jpg"); >" style="width:100%; height:150px;">              
+		</div>
+        </a>
+	</div>	 -->
+	<div class="col-md-3">
+        <a href="http://nkuzem.nku.edu.tr/" target="new" style="text-decoration:none;">
+        <div class="panel panel-success">
+            <div class="panel-heading" style="cursor:pointer;"><u><b>Uzaktan Eğitim Sistemi</b></u></div>
+            <img class="img-responsive" src="./corlu-ogrenci-bilgi-sistemi_files/onlinelearning.jpg" style="width:100%; height:150px;">              
+		</div>
+        </a>
+	</div>
+    <div class="col-md-3">
+        <a href="https://mezun.nku.edu.tr/" target="new" style="text-decoration:none;">
+        <div class="panel panel-danger">
+            <div class="panel-heading" style="cursor:pointer;"><u><b>Mezun Sistemi</b></u></div>
+            <img class="img-responsive" src="./corlu-ogrenci-bilgi-sistemi_files/mezun.jpg" style="width:100%; height:150px;">              
+		</div>
+        </a>
+	</div>
+    <div class="col-md-3">
+        <a href="https://euniversite.nku.edu.tr/testotomasyon/Diplomasorgu/diplomaSorguAnasayfa" target="new" style="text-decoration:none;">
+        <div class="panel panel-warning">
+        	<div class="panel-heading" style="cursor:pointer;"><u><b>Diploma Sorgulama Sistemi</b></u></div>
+            <img class="img-responsive" src="./corlu-ogrenci-bilgi-sistemi_files/diploma.jpg" style="width:100%; height:150px;">              
+		</div>
+        </a>
+	</div>
+	<div class="col-md-3">
+        <a href="http://trakyakariyer.org/" target="new" style="text-decoration:none;">
+        <div class="panel panel-info">
+        	<div class="panel-heading" style="cursor:pointer;"><u><b>NKÜ Kariyer Merkezi</b></u></div>
+            <img class="img-responsive" src="./corlu-ogrenci-bilgi-sistemi_files/kariyer.jpg" style="width:100%; height:150px;">              
+		</div>
+        </a>
+	</div>
+    
+	<div class="col-md-3">
+        <a href="http://yarzamsis.nku.edu.tr/" target="new" style="text-decoration:none;">
+        <div class="panel panel-success">
+        	<div class="panel-heading" style="cursor:pointer;"><u><b>Kısmî Zamanlı Öğrenci Sistemi</b></u></div>
+            <img class="img-responsive" src="./corlu-ogrenci-bilgi-sistemi_files/kismi.jpg" style="width:100%; height:150px;">              
+		</div>
+        </a>
+	</div>
+    <div class="col-md-3">
+        <a href="http://kurslar.nku.edu.tr/" target="new" style="text-decoration:none;">
+        <div class="panel panel-danger">
+        	<div class="panel-heading" style="cursor:pointer;"><u><b>Kurslar</b></u></div>
+            <img class="img-responsive" src="./corlu-ogrenci-bilgi-sistemi_files/kurs.jpg" style="width:100%; height:150px;">              
+		</div>
+        </a>
+	</div>
+    <div class="col-md-3">
+        <a href="http://topluluklar.nku.edu.tr/" target="new" style="text-decoration:none;">
+        <div class="panel panel-warning">
+        	<div class="panel-heading" style="cursor:pointer;"><u><b>Topluluklar</b></u></div>
+            <img class="img-responsive" src="./corlu-ogrenci-bilgi-sistemi_files/topluluk.jpg" style="width:100%; height:150px;">              
+		</div>
+        </a>
+	</div>
+	<div class="col-md-3">
+        <a href="https://bhi.nku.edu.tr/" target="new" style="text-decoration:none;">
+        <div class="panel panel-info">
+        	<div class="panel-heading" style="cursor:pointer;"><u><b><font size="-1">Haberler &amp; Duyurular &amp; Etkinlikler</font></b></u></div>
+            <img class="img-responsive" src="./corlu-ogrenci-bilgi-sistemi_files/media.png" style="width:100%; height:150px;">              
+		</div>
+        </a>
+	</div>
+
+    <div class="col-md-12" align="right">
+    	<a href="http://www.nku.edu.tr/yemekgoster" target="new" title="Yemek Listesi"><i class="fa fa-cutlery fa-2x" style="color:#f0ad4e;"></i></a>&nbsp;&nbsp;
+    	<a href="http://tv.nku.edu.tr/" target="new" title="NKÜ TV"><i class="fa fa-television fa-2x" style="color:#666;"></i></a>&nbsp;&nbsp;
+    	<a href="http://radyo.nku.edu.tr/" target="new" title="NKÜ Radyo"><i class="fa fa-music fa-2x" style="color:#000;"></i></a>&nbsp;&nbsp;
+    	<!--<a href="http://www.nku.edu.tr/sanaltur/tur.html" target="new" title="NKÜ 360&deg; Tur"><i class="fa fa-refresh fa-2x" style="color:#F00;"></i></a>&nbsp;&nbsp;-->
+        <a href="https://www.facebook.com/www.nku.edu.tr" target="new"><i class="fa fa-facebook fa-2x" style="color:#337ab7;"></i></a>&nbsp;&nbsp;
+		<a href="https://twitter.com/tekirdag_nku" target="new"><i class="fa fa-twitter fa-2x" style="color:#5bc0de;"></i></a>&nbsp;&nbsp;
+		<a href="https://www.instagram.com/nkuniversitesi2006/" target="new"><i class="fa fa-instagram fa-2x"></i></a>&nbsp;&nbsp;
+		<a href="https://www.youtube.com/user/nkutvnku" target="new"><i class="fa fa-youtube fa-2x" style="color:#F00;"></i></a>&nbsp;&nbsp;
+		<!--<a href="https://play.google.com/store/apps/details?id=com.nku.android" target="new"><i class="fa fa-android fa-2x" style="color:#A4C639;"></i></a>&nbsp;&nbsp;
+		<a href="https://itunes.apple.com/us/app/nk%C3%BC-mobil/id1203262842?mt=8" target="new"><i class="fa fa-apple fa-2x" style="color:#000;"></i></a>-->
+
+    </div>
+</div>
+<!-- Default bootstrap modal example-->
+<div class="modal fade" id="sorgulamodal" name="sorgulamodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="position:absolute;" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header modal-header-primary">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" style="font-weight:bold;">Öğrenci Numarası Sorgula</h4>
+      </div>
+      <div class="modal-body" style="min-height:200px;">
+      </div>
+    </div>
+  </div>
+</div>
+<script type="application/javascript">
+function DogrulamaKoduGuncelle()
+{
+	$.ajax({
+			type: 'POST',
+			url: '//ogr.nku.edu.tr/login/dogrulamakoduguncelle',
+			data: {
+				  },
+			dataType: "text",
+			cache: false,
+			success: function (data) { $("#dogrulamakodudiv").html(data); },
+			error: function (error) { console.log(error); }
+		  });
+}//DogrulamaKoduGuncelle() sonu
+
+$("#sorgulamodal").on("show.bs.modal", function(e) {
+    var link = $(e.relatedTarget);
+	$(this).find(".modal-body").load(link.attr("href"));
+});
+</script>
+<footer style="margin:0; padding:0;"><!--style="position:absolute; bottom:0; width: inherit; height:60px;" -->
+  <div class="well" style="margin-bottom:0px;">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <p>Copyright © BİDB 2021</p>
+          </div>
+      </div>
+  </div>
+  <div class="clearfix"></div>
+</footer>	
+</div>
+
+</body></html>

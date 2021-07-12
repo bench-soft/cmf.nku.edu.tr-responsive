@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0040)https://euniversite.nku.edu.tr/giris.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>NKU E-Universite</title>
+
+
+
+
+<title>NKU E-Universite Otomasyonları</title>
+<script async="" src="./corlu-e-uni_files/analytics.js.indir"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56711067-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script language="JavaScript" type="text/javascript" src="./corlu-e-uni_files/jquery.js.indir"></script>   
+<script language="JavaScript" type="text/javascript" src="./corlu-e-uni_files/jZorunluAlan.js.indir"></script>         
+<link rel="stylesheet" type="text/css" href="./corlu-e-uni_files/ekran.css" media="screen"> 
+<link rel="stylesheet" type="text/css" href="./corlu-e-uni_files/zorunlualan.css">
+
+<!--takvim-->
+<script src="./corlu-e-uni_files/takvim_jscal2.js.indir"></script>
+<script src="./corlu-e-uni_files/takvim_en.js.indir"></script>
+<link type="text/css" rel="stylesheet" href="./corlu-e-uni_files/takvim_jscal2.css">
+<link type="text/css" rel="stylesheet" href="./corlu-e-uni_files/takvim_borderradius.css">
+<link id="skinhelper-compact" type="text/css" rel="alternate stylesheet" href="./corlu-e-uni_files/takvim_reducespacing.css">
+<!--****-->
+
+<!-- accordion menu-->
+<script type="text/javascript" src="./corlu-e-uni_files/jquery.hoverIntent.minified.js.indir"></script> 
+<script type="text/javascript" src="./corlu-e-uni_files/jquery.cookie.js.indir"></script> 
+<script type="text/javascript" src="./corlu-e-uni_files/jquery.dcjqaccordion.2.8.js.indir"></script> 
+<link rel="stylesheet" href="./corlu-e-uni_files/grey.css" type="text/css" media="screen"> 
+
+<!-- popup-->
+<script type="text/javascript" src="./corlu-e-uni_files/easy.js.indir"></script>
+<script type="text/javascript" src="./corlu-e-uni_files/main.js.indir"></script>
+<link type="text/css" href="./corlu-e-uni_files/easy.css" rel="stylesheet" media="screen">
+
+<!-- tab -->
+<script src="./corlu-e-uni_files/jquery.tabs.pack.js.indir" type="text/javascript"></script>
+<link rel="stylesheet" href="./corlu-e-uni_files/jquery.tabs.css" type="text/css" media="print, projection, screen">
+
+<!--Loading animation-->
+<script type="text/javascript" src="./corlu-e-uni_files/jquery.showLoading.js.indir"></script> 
+
+ 
+</head>
+
+<body bgcolor="#babbbd">
+
+
+<script type="text/javascript">
+function over(id, cursorVal)
+{
+document.getElementById(id).style.cursor = cursorVal;
+}
+
+function out(id)
+{
+document.getElementById(id).style.cursor = 'default';
+}
+
+</script>
+<script type="text/javascript">
+
+function DivAc() 
+{
+	document.getElementById('dugmeler').style.display="none";
+	document.getElementById('girisdiv').style.display="block";
+}
+
+function formKontrol(form) 
+{
+if(document.getElementById('email').value=='') 
+{
+	alert('E-posta Adresinizi ve Şifrenizi Doğru Giriniz. '); 
+	document.getElementById('email').focus(); 
+	return false; 
+} 
+
+if(document.getElementById('sifre').value=='') 
+{
+	alert('E-posta Adresinizi ve Şifrenizi Doğru Giriniz. '); 
+	document.getElementById('sifre').focus(); 
+	return false; 
+} 
+return true;
+ }
+</script>
+<style>
+input:focus
+{ 
+background-color:#9F9;
+}
+</style>
+
+
+
+
+
+<div id="dugmeler" name="dugmeler" align="center" style="margin:0px; overflow:hidden;">
+<img src="./corlu-e-uni_files/euniversitegirisust.jpg" border="0" style="width:100%; height:auto;">
+<img src="./corlu-e-uni_files/euniversitegirisorta.jpg" border="0" usemap="#girisresmi" style="width:1024px; height:400px;">
+<map name="girisresmi" id="girisresmi">
+  <area shape="circle" coords="243,222,110" href="http://ogr.nku.edu.tr/" target="_self">
+  <area shape="circle" coords="511,143,110" onclick="DivAc();" onmouseover="over(&#39;girisresmi&#39;,&#39;pointer&#39;);" onmouseout="out(&#39;girisresmi&#39;);" target="_self" alt="Akademik Giriş">
+  <area shape="circle" coords="778,222,110" onclick="DivAc();" onmouseover="over(&#39;girisresmi&#39;,&#39;pointer&#39;);" onmouseout="out(&#39;girisresmi&#39;);" target="_self">
+</map>
+
+<div style="width:100%; height:150px;">
+<div style="background-color:#44515d; width:50%; height:150px; float:left;">
+
+
+   
+</div>
+<div style="background-color:#f38e62; width:50%; height:150px; float:right;"></div>
+</div>
+
+</div>
+
+<div align="center">
+<div id="girisdiv" name="girisdiv" style="display:none;">
+<img src="./corlu-e-uni_files/euniversitegirisust.jpg" border="0" style="width:100%; height:auto;">
+<br>
+<br>
+<form id="form1" name="form1" method="post" action="https://euniversite.nku.edu.tr/index.php" onsubmit="return formKontrol(this);">
+<table cellpadding="0" cellspacing="0" border="0" width="500" class="arama">
+    <tbody><tr>
+    	<td colspan="4" bgcolor="#FFFFFF">&nbsp;</td>
+    </tr>
+    <tr>
+    	<td width="110" valign="middle" align="center" rowspan="6" bgcolor="#FFFFFF">
+        <img src="./corlu-e-uni_files/euniversitelogo4.png" width="100" height="80">
+        </td>
+        <td colspan="3" bgcolor="#FFFFFF">&nbsp;</td>
+    </tr>
+    <tr>
+    	<td colspan="3" bgcolor="#FFFFFF">&nbsp;</td>
+    </tr>
+    <tr>
+    	<td width="90" align="left" bgcolor="#FFFFFF">Kullanıcı Adı</td>
+        <td width="5" bgcolor="#FFFFFF">:</td>
+        <td width="300" align="left" bgcolor="#FFFFFF">
+        <input type="text" id="email" name="email">@nku.edu.tr
+        </td>
+    </tr>
+    <tr>
+    	<td align="left" bgcolor="#FFFFFF">Şifre</td>
+        <td bgcolor="#FFFFFF">:</td>
+        <td align="left" bgcolor="#FFFFFF">
+        <input type="password" id="sifre" name="sifre">
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="3" bgcolor="#FFFFFF">&nbsp;</td>
+    </tr>
+    <tr>
+    	<td colspan="2" bgcolor="#FFFFFF">
+    	</td><td bgcolor="#FFFFFF">
+        <input type="submit" id="girisyap" name="girisyap" value="GİRİŞ">
+       	<a href="https://sifre.nku.edu.tr/" style=" text-decoration:none;" target="new"> <input type="button" id="sifreunuttum" name="sifreunuttum" value="ŞİFREMİ UNUTTUM" style="cursor:pointer;margin-right:20px;"></a>
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="4" bgcolor="#FFFFFF">&nbsp;</td>
+    </tr>
+</tbody></table>
+</form>
+<br>
+<br>
+<div style="width:100%; height:150px;">
+<div style="background-color:#44515d; width:50%; height:150px; float:left;"></div>
+<div style="background-color:#f38e62; width:50%; height:150px; float:right;"></div>
+</div>
+</div>
+</div>
+
+</body></html>

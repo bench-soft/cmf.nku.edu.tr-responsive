@@ -1,0 +1,691 @@
+
+/*form alanlarında karakter kontrolü yapan fonksiyon. Parametreleri:
+-e:event-karakter girme olayı	
+-allowedchars:alana girilmesine izin verilen karakterler
+*/
+function KarakterKontrol(e, allowedchars){
+	var key = e.charCode == undefined ? e.keyCode : e.charCode;
+	if ( (allowedchars.test(String.fromCharCode(key))) || key==0 || key==13 ){ return true;}
+	else { return false;}
+}//karakter kontrolü fonksiyonu sonu
+
+//büyük harfe çevirme
+function BuyukHarfCevir(id)
+{
+	var deger=document.getElementById(id).value.replace("i","İ");
+	deger=deger.replace("ı","I");
+	document.getElementById(id).value=deger.toUpperCase();
+}
+
+function TarihFarki(date1, date2) 
+{
+	dt1 = new Date(date1);
+	dt2 = new Date(date2);
+	return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
+}//.TarihFarki()
+
+function divYazdir(divName) 
+{
+var headcontent=document.head.innerHTML;
+var frame1 = $("<iframe />");
+frame1[0].name = "frame1";
+frame1.css({ "position": "absolute", "top": "-1000000px" });
+$("body").append(frame1);
+var frameDoc = frame1[0].contentWindow ? frame1[0].contentWindow : frame1[0].contentDocument.document ? frame1[0].contentDocument.document : frame1[0].contentDocument;
+try {
+	frameDoc.document.head.innerHTML = headcontent; // Work around for Edge
+}
+catch (e) {
+	$(frameDoc.document.head).html(headcontent); // Old IE
+}
+frameDoc.document.body.innerHTML =document.getElementById(divName).innerHTML;
+setTimeout( function () {
+	window.frames["frame1"].focus();
+	window.frames["frame1"].print();
+	frame1.remove();
+	frameDoc = null;
+	frame1 = null;
+}, 250 );
+}//.divYazdir()
+
+function divYazdirYatay(divName) 
+{
+	var headcontent=document.head.innerHTML;
+	var frame1 = $("<iframe />");
+	frame1[0].name = "frame1";
+	frame1.css({  "font-size": "5vw","position": "absolute", "top": "-1000000px", "size": "landscape" });
+	$("body").append(frame1);
+	var frameDoc = frame1[0].contentWindow ? frame1[0].contentWindow : frame1[0].contentDocument.document ? frame1[0].contentDocument.document : frame1[0].contentDocument;
+	try {
+		frameDoc.document.head.innerHTML = headcontent; // Work around for Edge
+	}
+	catch (e) {
+		$(frameDoc.document.head).html(headcontent); // Old IE
+	}
+	frameDoc.document.body.innerHTML =document.getElementById(divName).innerHTML;
+	setTimeout( function () {
+		window.frames["frame1"].focus();
+		window.frames["frame1"].print();
+		frame1.remove();
+		frameDoc = null;
+		frame1 = null;
+	}, 250 );
+}//.divYazdir()
+
+function ListeKontrol(parent,child)
+{
+  document.getElementById(child).value=document.getElementById(child).options[0].value;
+  var parentValue=document.getElementById(parent).value;
+  //for
+  for(i=0;i<document.getElementById(child).length;i++)
+  {
+	  var chilparentArray=document.getElementById(child).options[i].className.split("_");
+	  var chilparentValue=chilparentArray[1];
+	  //if-0
+	  if(chilparentValue==0){	document.getElementById(child).options[i].style.display="block"; }
+	  //else- >0
+	  else
+	  {
+		  if(chilparentValue==parentValue){	document.getElementById(child).options[i].style.display="block"; }
+		  else{	document.getElementById(child).options[i].style.display="none"; }
+	  }//else sonu- >0
+  }//for sonu
+}//.ListeKontrol()
+
+
+function ListeKontrolMulti(parent,child,nonselecttext,buttonwidth)
+{
+	var deger=$('#'+parent).val();
+	$('#'+child).multiselect('destroy');
+	$('#'+child).html($('#'+parent+'_'+child+' .sub_'+deger).clone());
+	
+	if(nonselecttext==''){ nonselecttext='Hiçbiri seçili değil';	}
+	if(buttonwidth==''){ buttonwidth='100px';	}
+	$(document).ready(function() {
+		$('#'+child).multiselect({ 
+			includeSelectAllOption: true, 
+			selectAllText: 'Tümünü Seç', 
+			allSelectedText: 'Tümü Seçili',
+			nSelectedText:'Adet Seçili',
+			nonSelectedText:nonselecttext,
+			maxHeight: 200,  
+			buttonWidth:buttonwidth 
+		});
+	});
+}
+
+//Birbiriyle ilişkili olan selectbox'lari birbirine bağlamak için kullanilan fonksiyon.
+function makeSublist(parent,child,isSubselectOptional,childVal)
+{
+	$("body").append("<select style='display:none' id='"+parent+child+"'></select>");
+	$('#'+parent+child).html($("#"+child+" option"));
+ 
+	var parentValue = $('#'+parent).attr('value');
+	$('#'+child).html($("#"+parent+child+" .sub_"+parentValue).clone());
+ 
+	childVal = (typeof childVal == "undefined")? "" : childVal ;
+ 
+	$('#'+parent).change(function(){
+		var parentValue = $('#'+parent).attr('value');
+		$('#'+child).html($("#"+parent+child+" .sub_"+parentValue).clone());
+		if(isSubselectOptional) $('#'+child).prepend("<option value='0' selected='selected'> -- Seçiniz -- </option>");
+		$('#'+child).trigger("change");
+		$('#'+child).focus();
+	});
+}//Birbiriyle ilişkili olan selectbox'lari birbirine bağlamak için kullanilan fonksiyon sonu
+
+
+
+
+function SayfaRefresh()
+{ location.reload(true); }
+
+/*PARAMETRELER:
+-alertparametres: swal parametreleri sitenilenler gönderilir.bknz sweetalert.js
+-functionparams: Confirm butonuna tıklanınca çalışacak fonksiyon verileri[fonksiyonadi,parametre]. 
+				Confirm butonuna tıklanınca bir fonksiyon çalışmayacaksa ["",""] şeklinde dizi gönderilir.
+*/
+function SweetAlert(alertparametres,functionparams)
+{
+	if(functionparams[0]=="")
+	{
+		swal(alertparametres) ;
+		
+	}
+	else
+	{
+		/*eski (sweetalert.js)
+		swal(alertparametres,
+			function(isConfirm)
+			{
+				if (isConfirm === true) { if(functionparams[1]==""){ eval(functionparams[0])(); } else{	eval(functionparams[0])(functionparams[1]); } 	}
+			}
+		);*/
+		swal(alertparametres).then(function () 
+			{	  
+				if(functionparams[1]==""){ eval(functionparams[0])(); } else{	eval(functionparams[0])(functionparams[1]); }
+			}
+		);	
+	}
+
+}//.SweetAlert
+
+function SweetAlertWithText(alertparametres,functionparams)
+{
+	if(functionparams[0]=="")
+	{
+		swal(alertparametres) ;
+		
+	}
+	else
+	{
+		swal(alertparametres).then(function (textvalue) 
+			{	  
+				if(functionparams[1]==""){ eval(functionparams[0])(textvalue); } else{	eval(functionparams[0])(functionparams[1]+"æß"+textvalue); }
+			}
+		);	
+	
+	}
+}//.SweetAlertWithText
+
+/*PARAMETRELER:
+-tabloid: table id
+-dataurl:table dataların oluşturulduğu controller yolu
+-unordercolumns: sıralama yapılmayacak alanlar(Örn.:[0,1,2,3]). 0 mutlaka konulmalı. default:[0]
+-(v2)invisiblecolumns: defaultta görülmeyecek alanlar(Örn.:[0,1,2,3]). 0 mutlaka konulmalı. default:[]
+-orderparams: tablo hangi sütuna ve neye göre(asc,desc) sıralanacığı bilgileri default:[ 1, 'asc' ]
+-pagelengthparams: tabloyu kaçar kayıt gösterme seçenekleri listesi. Sonuna hepsini eklemek için -1 gönderilir. (Örn: [10,20,30,40,50,-1]	) default:[10,25,50,100,-1] 
+-domvalue:verilen sıraya göre yapıları koyar. default:"Bfrtip"; Hangisi konulacaksa onun harfi. B:buttons, f:arama, r:geçerli kayıt sayısı gösterimi, t:tablo, i: kayıt bilgileri, p: sayfa kontrol
+-buttons: Hangi butonlar konulacaksa aralarında virgül ile belirtilir. 
+	listele: Kayıt gösterme seçenek butonu, 
+	alanfiltre: Alanları gizleme gösterme butonu, 
+	aktar:Excel, PDF ve Yazdır butonlarını grup halinde gösteren buton,
+	excel: Excel aktarma butonu (aktar konulduysa excel konulmasına gerek yok, otomatik gelir.)
+	pdf: PDF aktarma butonu (aktar konulduysa pdf konulmasına gerek yok, otomatik gelir.)
+	yazdir: Yazdırma butonu (aktar konulduysa yazdir konulmasına gerek yok, otomatik gelir.)
+-exporttitle:Excel, PDF ve Yazdırma çıktıları için kullanılan başlık bilgisi.
+-exportcolumns: Excel, PDF ve Yazdırma çıktılarında gösterilecek alanlar listesi
+-addbuttons : Standart butonların yanına kendi butonunu koyma dizi halinde gönderilir. 
+	0=>array(butonadi,butonclass,fonksiyonadı);
+*/
+function DinamikTabloOlustur(tabloid,dataurl,unordercolumns,orderparams,pagelengthparams,domvalue,scrollparams,buttons,exporttitle,exportcolumndatas,addbuttons)
+{
+	var unordercolumnarray=[0];
+	//if-seçili sıralanmayacak sütunlar
+	if(unordercolumns!="")
+	{
+		uocarray=unordercolumns.split(",");
+		for(cs=0;cs<uocarray.length;cs++){ if(uocarray[cs]!=0){ unordercolumnarray.push(parseInt(uocarray[cs])); } 	}
+	}//if sonu-seçili sıralanmayacak sütunlar
+	
+	//if-default sıralama kriterleri
+	if(orderparams=="")	{	var orderparamsarray=[ 1, 'asc' ];	}
+	//else-seçili sıralanmayacak sütunlar
+	else	{	var orderparamsarray=orderparams.split(","); 	}
+	
+	//if-default listeleme sayıları
+	if(pagelengthparams=="")
+	{
+		var lengthmenuparam1=[10,25,50,100,-1];
+		var lengthmenuparam2=[10,25,50,100,"Hepsi"];
+	}//if sonu-default listeleme sayıları
+	//else-seçili listeleme sayıları
+	else
+	{
+		plparamsarray=pagelengthparams.split(",");
+		var lengthmenuparam1=[parseInt(plparamsarray[0])];
+		var lengthmenuparam2=[parseInt(plparamsarray[0])];
+		for(ps=1;ps<plparamsarray.length;ps++)
+		{
+			lengthmenuparam1.push(plparamsarray[ps]);
+			lengthmenuparam2.push(plparamsarray[ps].replace("-1","Hepsi"));
+		}
+	}//else sonu-seçili listeleme sayıları
+	
+	//if-default dom
+	if(domvalue=="")	{	domvalue="Bfrtip";	}
+	
+	var exportcolumnarray=[0];
+	//if-seçili sıralanmayacak sütunlar
+	if(exportcolumndatas!="")
+	{
+		ecarray=exportcolumndatas.split(",");
+		for(cs=0;cs<ecarray.length;cs++){ if(ecarray[cs]!=0){ exportcolumnarray.push(parseInt(ecarray[cs])); } 	}
+	}//else sonu-seçili sıralanmayacak sütunlar	
+	var buttonsparams=[];
+	//if-listele buton
+	if(buttons.search("listele")!=-1)
+	{	buttonsparams.push({ extend: "pageLength", className: "btn-sm"});		}
+	//if-alanfiltre buton
+	if(buttons.search("alanfiltre")!=-1)
+	{	buttonsparams.push({ extend: "colvis", className: "btn-sm btn-primary", text:"Alan Filtrele <span class='caret'/>", columns: exportcolumnarray });	}
+	//if-aktar buton
+	if(buttons.search("aktar")!=-1)
+	{
+		buttonsparams.push({
+						extend: "collection",
+						text: "Aktar <span class='caret'/>",
+						className: "btn-sm btn-info",
+						buttons: [ 
+							{ 
+								extend: "excel", 
+								title: exporttitle,
+								exportOptions: {
+									columns: exportcolumnarray,
+								 	format: {
+												body: function ( data, row, column, node ) {
+													if(column === 0){ return row + 1; } 
+													else { return data; }
+												}//.body-ilk sütuna data sıra nosunu yazma
+											}//.format
+								}//.exportOptions
+							}, //.excel
+							{ 
+								extend: "pdfHtml5", 
+								title: exporttitle,
+								exportOptions: {
+								 	columns: exportcolumnarray,
+								 	format: {
+												body: function ( data, row, column, node ) {
+													if( column === 0){ return row + 1; } 
+													else { return data; }
+												}//.body-ilk sütuna data sıra nosunu yazma
+											}//.format
+								},//.exportOptions
+                                customize: 	function (doc, config) {
+                                    			var tableNode;
+                                    			for (i = 0; i < doc.content.length; ++i) 
+												{	if (doc.content[i].table !== undefined){	tableNode = doc.content[i];	break; }	}
+                                    			var rowIndex = 0;
+                                    			var tableColumnCount = tableNode.table.body[rowIndex].length;
+                                    			if (tableColumnCount >= 8) { doc.pageOrientation = 'landscape'; }
+                                			}//.customize function-sütun sayısına göre sayfayı dikey/yatay yapma
+							},//.pdf
+							{ 
+								extend: "print", 
+								text: "Yazdır", 
+								title: exporttitle,
+								exportOptions: {
+									columns: exportcolumnarray,
+								 	format: {
+												body: function ( data, row, column, node ) {
+													if( column === 0){ return row + 1; } 
+													else { return data; }
+												}//.body-ilk sütuna data sıra nosunu yazma
+											}//.format
+								}//.exportOptions
+							}//.print 
+						]
+					});	
+	}//if sonu-aktar buton
+	//else 
+	else
+	{ 
+		//if-excel
+		if(buttons.search("excel")!=-1)
+		{	
+			buttonsparams.push({ 
+				extend: "excel", 
+				className: "btn-sm btn-success", 
+				title: exporttitle, 
+				exportOptions: {
+						columns: exportcolumnarray,
+						format: {
+									body: function ( data, row, column, node ) {
+										if(column === 0){ return row + 1; } 
+										else { return data; }
+									}//.body-ilk sütuna data sıra nosunu yazma
+								}//.format
+				}//.exportOptions
+			});	
+		}//if sonu-excel
+		//if-pdf
+		if(buttons.search("pdf")!=-1)
+		{	
+			buttonsparams.push({ 
+				extend: "pdfHtml5", 
+				className: "btn-sm btn-danger", 
+				title: exporttitle, 
+				exportOptions: {
+						columns: exportcolumnarray,
+						format: {
+									body: function ( data, row, column, node ) {
+										if(column === 0){ return row + 1; } 
+										else { return data; }
+									}//.body-ilk sütuna data sıra nosunu yazma
+								}//.format
+				},//.exportOptions
+				customize: function (doc, config) {
+								var tableNode;
+								for (i = 0; i < doc.content.length; ++i) 
+								{	if (doc.content[i].table !== undefined){	tableNode = doc.content[i];	break; }	}
+								var rowIndex = 0;
+								var tableColumnCount = tableNode.table.body[rowIndex].length;
+								if (tableColumnCount >= 8) { doc.pageOrientation = 'landscape'; }
+						}//.customize function-sütun sayısına göre sayfayı dikey/yatay yapma
+			});	
+		}//if sonu-pdf
+		//if-yazdir
+		if(buttons.search("yazdir")!=-1)
+		{
+			buttonsparams.push({ 
+				extend: "print", 
+				className: "btn-sm btn-primary",
+				text:"Yazdır <i class='fa fa-print'></i>", 
+				title: exporttitle, 
+				exportOptions: {
+						columns: exportcolumnarray,
+						format: {
+									body: function ( data, row, column, node ) {
+										if(column === 0){ return row + 1; } 
+										else { return data; }
+									}//.body-ilk sütuna data sıra nosunu yazma
+								}//.format
+				}//.exportOptions
+			});	
+		}//if sonu-yazdir
+	}//else sonu
+	//for-Ek butonlar
+	for(bs=0;bs<addbuttons.length;bs++)
+	{
+		buttonsparams.push({ text: addbuttons[bs][0], className: addbuttons[bs][1]});
+	}//for sonu-Ek butonlar
+	var scrollparamsarray=scrollparams.split(",");
+	var scrollxvalue=scrollparamsarray[0].replace("false","");
+	var scrolyvalue=scrollparamsarray[1];
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	var handleDataTableButtons = function() {
+		if ($("#"+tabloid).length) {
+            var t=$("#"+tabloid).DataTable({
+				scrollX: scrollxvalue,
+				scrollY: scrolyvalue,
+		 		dom: domvalue,
+                processing: true, //Feature control the processing indicator.
+                serverSide: true, //Feature control DataTables' server-side processing mode.
+				columnDefs: [ 
+					{
+						"targets": unordercolumnarray, 
+						"searchable": false, 
+						"orderable": false						
+					} 
+				],
+        		order: [orderparamsarray],
+		 		lengthMenu: [lengthmenuparam1, lengthmenuparam2],
+				ajax: {"url": dataurl, "type": "POST"},
+				buttons: [ buttonsparams ],
+              	//responsive: true  
+			});//.DataTable
+			t.on( 'order.dt search.dt', function () {
+        		t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            		//cell.innerHTML = i+1;
+        		} );
+    		} ).draw();
+		}//if sonu
+	};//.handleDataTableButtons
+	TableManageButtons = function() {
+    	"use strict";
+    	return {
+        	init: function() {
+            	handleDataTableButtons();
+      		}
+      	};
+  	}();
+	TableManageButtons.init();
+	//for-Ek butonlar click fonksiyon
+	for(bs=0;bs<addbuttons.length;bs++)
+	{
+		var functionname=addbuttons[bs][2];
+		var btnclassarray=addbuttons[bs][1].split(" ");
+		$("."+btnclassarray[btnclassarray.length-1]).click(eval(functionname));
+	}//for sonu-Ek butonlar click fonksiyon
+}//.DinamikTabloOlustur()
+
+function DinamikTabloOlusturv2(tabloid,dataurl,unordercolumns,invisiblecolumns,orderparams,pagelengthparams,domvalue,scrollparams,buttons,exporttitle,exportcolumndatas,addbuttons)
+{
+	var unordercolumnarray=[0];
+	//if-seçili sıralanmayacak sütunlar
+	if(unordercolumns!="")
+	{
+		uocarray=unordercolumns.split(",");
+		for(cs=0;cs<uocarray.length;cs++){ if(uocarray[cs]!=0){ unordercolumnarray.push(parseInt(uocarray[cs])); } 	}
+	}//if sonu-seçili sıralanmayacak sütunlar
+	
+	var invisiblecolumnarray=[];
+	//if-seçili görünmeyecek sütunlar
+	if(invisiblecolumns!="")
+	{
+		icarray=invisiblecolumns.split(",");
+		for(cs=0;cs<icarray.length;cs++){ if(icarray[cs]!=0){ invisiblecolumnarray.push(parseInt(icarray[cs])); } 	}
+	}//if sonu-seçili görünmeyecek sütunlar
+
+	//if-default sıralama kriterleri
+	if(orderparams=="")	{	var orderparamsarray=[ 1, 'asc' ];	}
+	//else-seçili sıralanmayacak sütunlar
+	else	{	var orderparamsarray=orderparams.split(","); 	}
+	
+	//if-default listeleme sayıları
+	if(pagelengthparams=="")
+	{
+		var lengthmenuparam1=[10,25,50,100,-1];
+		var lengthmenuparam2=[10,25,50,100,"Hepsi"];
+	}//if sonu-default listeleme sayıları
+	//else-seçili listeleme sayıları
+	else
+	{
+		plparamsarray=pagelengthparams.split(",");
+		var lengthmenuparam1=[parseInt(plparamsarray[0])];
+		var lengthmenuparam2=[parseInt(plparamsarray[0])];
+		for(ps=1;ps<plparamsarray.length;ps++)
+		{
+			lengthmenuparam1.push(plparamsarray[ps]);
+			lengthmenuparam2.push(plparamsarray[ps].replace("-1","Hepsi"));
+		}
+	}//else sonu-seçili listeleme sayıları
+	
+	//if-default dom
+	if(domvalue=="")	{	domvalue="Bfrtip";	}
+	
+	var exportcolumnarray=[0];
+	//if-seçili sıralanmayacak sütunlar
+	if(exportcolumndatas!="")
+	{
+		ecarray=exportcolumndatas.split(",");
+		for(cs=0;cs<ecarray.length;cs++){ if(ecarray[cs]!=0){ exportcolumnarray.push(parseInt(ecarray[cs])); } 	}
+	}//else sonu-seçili sıralanmayacak sütunlar	
+	var buttonsparams=[];
+	//if-listele buton
+	if(buttons.search("listele")!=-1)
+	{	buttonsparams.push({ extend: "pageLength", className: "btn-sm"});		}
+	//if-alanfiltre buton
+	if(buttons.search("alanfiltre")!=-1)
+	{	buttonsparams.push({ extend: "colvis", className: "btn-sm btn-primary", text:"Alan Filtrele <span class='caret'/>", columns: exportcolumnarray });	}
+	//if-aktar buton
+	if(buttons.search("aktar")!=-1)
+	{
+		buttonsparams.push({
+						extend: "collection",
+						text: "Aktar <span class='caret'/>",
+						className: "btn-sm btn-info",
+						buttons: [ 
+							{ 
+								extend: "excel", 
+								title: exporttitle,
+								exportOptions: {
+									columns: ':visible:not(.notexport)',
+								 	format: {
+												body: function ( data, row, column, node ) {
+													if(column === 0){ return row + 1; } 
+													else if(exportcolumnarray.indexOf(column)=== -1){ return ""; }
+													else { return data; }
+												}//.body-ilk sütuna data sıra nosunu yazma
+											}//.format
+								}//.exportOptions
+							}, //.excel
+							{ 
+								extend: "pdfHtml5", 
+								title: exporttitle,
+								exportOptions: {
+								 	columns: ':visible:not(.notexport)',
+								 	format: {
+												body: function ( data, row, column, node ) {
+													if( column === 0){ return row + 1; }
+													else if(exportcolumnarray.indexOf(column)=== -1){ return ""; }
+													else { return data; }
+												}//.body-ilk sütuna data sıra nosunu yazma
+											}//.format
+								},//.exportOptions
+                                customize: 	function (doc, config) {
+                                    			var tableNode;
+                                    			for (i = 0; i < doc.content.length; ++i) 
+												{	if (doc.content[i].table !== undefined){	tableNode = doc.content[i];	break; }	}
+                                    			var rowIndex = 0;
+                                    			var tableColumnCount = tableNode.table.body[rowIndex].length;
+                                    			if (tableColumnCount >= 8) { doc.pageOrientation = 'landscape'; }
+                                			}//.customize function-sütun sayısına göre sayfayı dikey/yatay yapma
+							},//.pdf
+							{ 
+								extend: "print", 
+								text: "Yazdır", 
+								title: exporttitle,
+								exportOptions: {
+									columns: ':visible:not(.notexport)',
+								 	format: {
+												body: function ( data, row, column, node ) {
+													if( column === 0){ return row + 1; }
+													else if(exportcolumnarray.indexOf(column)=== -1){ return ""; }
+													else { return data; }
+												}//.body-ilk sütuna data sıra nosunu yazma
+											}//.format
+								}//.exportOptions
+							}//.print 
+						]
+					});	
+	}//if sonu-aktar buton
+	//else 
+	else
+	{ 
+		//if-excel
+		if(buttons.search("excel")!=-1)
+		{	
+			buttonsparams.push({ 
+				extend: "excel", 
+				className: "btn-sm btn-success", 
+				title: exporttitle, 
+				exportOptions: {
+						columns: ':visible:not(.notexport)',
+						format: {
+									body: function ( data, row, column, node ) {
+										if(column === 0){ return row + 1; }
+										else if(exportcolumnarray.indexOf(column)=== -1){ return ""; }
+										else { return data; }
+									}//.body-ilk sütuna data sıra nosunu yazma
+								}//.format
+				}//.exportOptions
+			});	
+		}//if sonu-excel
+		//if-pdf
+		if(buttons.search("pdf")!=-1)
+		{	
+			buttonsparams.push({ 
+				extend: "pdfHtml5", 
+				className: "btn-sm btn-danger", 
+				title: exporttitle, 
+				exportOptions: {
+						columns: ':visible:not(.notexport)',
+						format: {
+									body: function ( data, row, column, node ) {
+										if(column === 0){ return row + 1; } 
+										else if(exportcolumnarray.indexOf(column)=== -1){ return ""; }
+										else { return data; }
+									}//.body-ilk sütuna data sıra nosunu yazma
+								}//.format
+				},//.exportOptions
+				customize: function (doc, config) {
+								var tableNode;
+								for (i = 0; i < doc.content.length; ++i) 
+								{	if (doc.content[i].table !== undefined){	tableNode = doc.content[i];	break; }	}
+								var rowIndex = 0;
+								var tableColumnCount = tableNode.table.body[rowIndex].length;
+								if (tableColumnCount >= 8) { doc.pageOrientation = 'landscape'; }
+						}//.customize function-sütun sayısına göre sayfayı dikey/yatay yapma
+			});	
+		}//if sonu-pdf
+		//if-yazdir
+		if(buttons.search("yazdir")!=-1)
+		{
+			buttonsparams.push({ 
+				extend: "print", 
+				className: "btn-sm btn-primary",
+				text:"Yazdır <i class='fa fa-print'></i>", 
+				title: exporttitle, 
+				exportOptions: {
+						columns: ':visible:not(.notexport)',
+						format: {
+									body: function ( data, row, column, node ) {
+										if(column === 0){ return row + 1; }
+										else if(exportcolumnarray.indexOf(column)=== -1){ return ""; }
+										else { return data; }
+									}//.body-ilk sütuna data sıra nosunu yazma
+								}//.format
+				}//.exportOptions
+			});	
+		}//if sonu-yazdir
+	}//else sonu
+	//for-Ek butonlar
+	for(bs=0;bs<addbuttons.length;bs++)
+	{
+		buttonsparams.push({ text: addbuttons[bs][0], className: addbuttons[bs][1]});
+	}//for sonu-Ek butonlar
+	var scrollparamsarray=scrollparams.split(",");
+	var scrollxvalue=scrollparamsarray[0].replace("false","");
+	var scrolyvalue=scrollparamsarray[1];
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	var handleDataTableButtons = function() {
+		if ($("#"+tabloid).length) {
+            var t=$("#"+tabloid).DataTable({
+				scrollX: scrollxvalue,
+				scrollY: scrolyvalue,
+		 		dom: domvalue,
+                processing: true, //Feature control the processing indicator.
+                serverSide: true, //Feature control DataTables' server-side processing mode.
+				columnDefs: [ 
+					{
+						"targets": unordercolumnarray, 
+						"searchable": false, 
+						"orderable": false						
+					},
+					{
+						"targets": invisiblecolumnarray, 
+						"visible": false						
+					}
+				],
+        		order: [orderparamsarray],
+		 		lengthMenu: [lengthmenuparam1, lengthmenuparam2],
+				ajax: {"url": dataurl, "type": "POST"},
+				buttons: [ buttonsparams ],
+              	//responsive: true  
+			});//.DataTable
+			t.on( 'order.dt search.dt', function () {
+        		t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            		//cell.innerHTML = i+1;
+        		} );
+    		} ).draw();
+		}//if sonu
+	};//.handleDataTableButtons
+	TableManageButtons = function() {
+    	"use strict";
+    	return {
+        	init: function() {
+            	handleDataTableButtons();
+      		}
+      	};
+  	}();
+	TableManageButtons.init();
+	//for-Ek butonlar click fonksiyon
+	for(bs=0;bs<addbuttons.length;bs++)
+	{
+		var functionname=addbuttons[bs][2];
+		var btnclassarray=addbuttons[bs][1].split(" ");
+		$("."+btnclassarray[btnclassarray.length-1]).click(eval(functionname));
+	}//for sonu-Ek butonlar click fonksiyon	
+}//.DinamikTabloOlusturv2()
